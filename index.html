@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>碳排放与气候变化 | 我们的地球，我们的责任</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,29 +14,34 @@
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
+            --primary: #1a472a;
+            --secondary: #2e7d32;
+            --accent: #4caf50;
             --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
+            --dark: #0d1f0f;
+            --danger: #d32f2f;
+            --warning: #ff9800;
+            --text: #f5f5f5;
+            --text-dark: #333333;
         }
 
         body {
-            background-color: var(--light);
+            background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
+            background-image: linear-gradient(to bottom, var(--dark), var(--primary));
+            min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
+            background: rgba(26, 71, 42, 0.9);
+            color: var(--text);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .container {
@@ -61,6 +66,7 @@
 
         .logo i {
             font-size: 2rem;
+            color: var(--accent);
         }
 
         nav ul {
@@ -73,7 +79,7 @@
         }
 
         nav ul li a {
-            color: var(--white);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -101,14 +107,14 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             height: 80vh;
             display: flex;
             align-items: center;
             text-align: center;
-            color: var(--white);
+            color: var(--text);
         }
 
         .hero-content {
@@ -130,7 +136,7 @@
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: var(--white);
+            color: var(--text);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
@@ -142,9 +148,17 @@
         }
 
         .btn:hover {
-            background-color: var(--primary);
+            background-color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+        }
+
+        .btn-danger:hover {
+            background-color: #b71c1c;
         }
 
         section {
@@ -158,7 +172,7 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -192,7 +206,7 @@
         .about-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .about-img img {
@@ -209,7 +223,7 @@
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
+            color: var(--accent);
         }
 
         .about-text p {
@@ -226,10 +240,11 @@
         .stat-item {
             text-align: center;
             padding: 2rem 1rem;
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
         .stat-item:hover {
@@ -238,13 +253,13 @@
 
         .stat-item i {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 1rem;
         }
 
         .stat-item h3 {
             font-size: 2.5rem;
-            color: var(--dark);
+            color: var(--text);
             margin-bottom: 0.5rem;
         }
 
@@ -252,61 +267,158 @@
             color: var(--text);
         }
 
-        .initiatives {
-            background-color: var(--white);
+        .data-section {
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
-        .initiatives-grid {
+        .data-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .chart-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .bar {
+            width: 60px;
+            background: linear-gradient(to top, var(--accent), var(--secondary));
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 0.5s ease;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sources-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .initiative-card {
-            background-color: var(--light);
+        .source-card {
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
-        .initiative-card:hover {
+        .source-card:hover {
             transform: translateY(-10px);
         }
 
-        .initiative-img {
+        .source-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .source-content {
+            padding: 1.5rem;
+        }
+
+        .source-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .source-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .solutions {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .solution-img {
             height: 200px;
             overflow: hidden;
         }
 
-        .initiative-img img {
+        .solution-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .initiative-card:hover .initiative-img img {
+        .solution-card:hover .solution-img img {
             transform: scale(1.1);
         }
 
-        .initiative-content {
+        .solution-content {
             padding: 1.5rem;
         }
 
-        .initiative-content h3 {
+        .solution-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--accent);
         }
 
-        .initiative-content p {
+        .solution-content p {
             margin-bottom: 1.5rem;
         }
 
         .cta {
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
+            color: var(--text);
             text-align: center;
             padding: 5rem 0;
         }
@@ -325,18 +437,18 @@
         }
 
         .cta .btn {
-            background-color: var(--white);
+            background-color: var(--text);
             color: var(--primary);
         }
 
         .cta .btn:hover {
             background-color: var(--accent);
-            color: var(--white);
+            color: var(--text);
         }
 
         footer {
             background-color: var(--dark);
-            color: var(--white);
+            color: var(--text);
             padding: 3rem 0 1rem;
         }
 
@@ -400,7 +512,7 @@
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--white);
+            color: var(--text);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -423,12 +535,16 @@
         }
 
         @media (max-width: 992px) {
-            .about-content {
+            .about-content, .data-content {
                 grid-template-columns: 1fr;
             }
             
-            .initiatives-grid {
+            .sources-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-content {
@@ -459,7 +575,7 @@
                 flex-direction: column;
                 padding: 1rem 0;
                 text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             }
             
             nav ul.active {
@@ -475,7 +591,7 @@
                 display: block;
             }
             
-            .initiatives-grid {
+            .sources-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -499,19 +615,19 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <i class="fas fa-smog"></i>
+                <span>碳排放与气候变化</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#problem">问题</a></li>
+                    <li><a href="#sources">排放源</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#action">采取行动</a></li>
                 </ul>
             </nav>
         </div>
@@ -520,92 +636,218 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>碳排放：气候变化的驱动因素</h1>
+            <p>了解碳排放如何影响我们的星球，以及我们每个人可以采取的行动来减少碳足迹。</p>
+            <a href="#problem" class="btn">了解更多</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- Problem Section -->
+    <section id="problem">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>碳排放问题</h2>
+                <p>碳排放是导致全球气候变化的主要因素，对地球生态系统产生深远影响。</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+                    <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="工业排放">
                 </div>
                 <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <h3>碳排放与气候变化</h3>
+                    <p>碳排放主要来自燃烧化石燃料（煤、石油和天然气），这些活动释放大量二氧化碳和其他温室气体到大气中。</p>
+                    <p>这些气体像毯子一样包裹地球，捕获太阳热量，导致全球气温上升，引发极端天气事件、海平面上升和生态系统破坏。</p>
+                    <p>自工业革命以来，大气中的二氧化碳浓度已从约280ppm增加到420ppm以上，这是过去80万年来的最高水平。</p>
+                    <a href="#sources" class="btn">查看排放源</a>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
+                    <i class="fas fa-industry"></i>
+                    <h3 class="counter" data-target="36">0</h3>
+                    <p>十亿吨年排放量</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-thermometer-full"></i>
+                    <h3 class="counter" data-target="1.2">0</h3>
+                    <p>摄氏度升温（自工业革命）</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-water"></i>
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>厘米海平面上升</p>
+                </div>
+                <div class="stat-item">
                     <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                    <h3 class="counter" data-target="17">0</h3>
+                    <p>百万公顷森林损失/年</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
+    <!-- Data Section -->
+    <section class="data-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2>碳排放数据</h2>
+                <p>全球主要国家的年度二氧化碳排放量（百万吨）</p>
             </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+            <div class="data-content">
+                <div class="chart-container">
+                    <h3>2022年主要国家碳排放</h3>
+                    <div class="chart">
+                        <div class="bar" style="height: 95%;">
+                            <span class="bar-value">11400</span>
+                            <span class="bar-label">中国</span>
+                        </div>
+                        <div class="bar" style="height: 50%;">
+                            <span class="bar-value">6000</span>
+                            <span class="bar-label">美国</span>
+                        </div>
+                        <div class="bar" style="height: 35%;">
+                            <span class="bar-value">4200</span>
+                            <span class="bar-label">印度</span>
+                        </div>
+                        <div class="bar" style="height: 25%;">
+                            <span class="bar-value">3000</span>
+                            <span class="bar-label">俄罗斯</span>
+                        </div>
+                        <div class="bar" style="height: 22%;">
+                            <span class="bar-value">2600</span>
+                            <span class="bar-label">日本</span>
+                        </div>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                <div class="about-text">
+                    <h3>全球排放趋势</h3>
+                    <p>全球碳排放持续增长，尽管可再生能源使用增加，但化石燃料消费仍然居高不下。</p>
+                    <p>中国是目前全球最大的碳排放国，其次是美国、印度、俄罗斯和日本。</p>
+                    <p>要实现《巴黎协定》将全球变暖控制在1.5°C以内的目标，全球需要在2030年前将排放量减少45%。</p>
+                    <a href="#solutions" class="btn">查看解决方案</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources Section -->
+    <section id="sources">
+        <div class="container">
+            <div class="section-title">
+                <h2>主要排放源</h2>
+                <p>了解碳排放的主要来源有助于我们制定有效的减排策略。</p>
+            </div>
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="source-content">
+                        <h3>能源生产</h3>
+                        <p>发电厂燃烧煤炭和天然气是最大的单一排放源，占全球排放的25%以上。</p>
+                        <a href="#" class="btn">了解更多</a>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-car"></i>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="source-content">
+                        <h3>交通运输</h3>
+                        <p>汽车、卡车、飞机和船只燃烧石油产品，贡献了约14%的全球排放。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="source-content">
+                        <h3>工业生产</h3>
+                        <p>钢铁、水泥和化学品生产过程中的能源使用和化学反应产生大量排放。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="source-content">
+                        <h3>建筑供暖</h3>
+                        <p>住宅和商业建筑的供暖、制冷和电力使用占全球排放的6%左右。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="source-content">
+                        <h3>森林砍伐</h3>
+                        <p>森林砍伐和土地利用变化减少了碳汇，同时释放储存的碳。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="source-content">
+                        <h3>农业</h3>
+                        <p>牲畜、肥料使用和稻田产生甲烷和一氧化二氮等强效温室气体。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>解决方案</h2>
+                <p>减少碳排放需要全球共同努力，以下是一些关键解决方案。</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="可再生能源">
+                    </div>
+                    <div class="solution-content">
+                        <h3>转向可再生能源</h3>
+                        <p>用太阳能、风能和水力发电等清洁能源替代化石燃料，是减少排放的最有效方法。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="电动汽车">
+                    </div>
+                    <div class="solution-content">
+                        <h3>推广电动汽车</h3>
+                        <p>电动汽车比传统燃油车排放更少，随着电网变得更清洁，其碳足迹将进一步减少。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="https://images.unsplash.com/photo-1589923188651-268a35c0f0f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="节能建筑">
+                    </div>
+                    <div class="solution-content">
+                        <h3>提高能源效率</h3>
+                        <p>通过改进建筑隔热、使用高效电器和优化工业流程，我们可以用更少的能源做更多的事。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="重新造林">
+                    </div>
+                    <div class="solution-content">
+                        <h3>保护与恢复森林</h3>
+                        <p>森林是重要的碳汇，保护现有森林并重新造林可以吸收大气中的二氧化碳。</p>
+                        <a href="#" class="btn">了解更多</a>
                     </div>
                 </div>
             </div>
@@ -613,57 +855,58 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="get-involved">
+    <section class="cta" id="action">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <h2>加入全球减排行动</h2>
+            <p>每个人都可以为减少碳排放做出贡献。从今天开始，采取行动保护我们的地球。</p>
+            <a href="#" class="btn">计算我的碳足迹</a>
+            <a href="#" class="btn">加入环保组织</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3>碳排放与气候变化</h3>
+                    <p>我们致力于提高人们对碳排放与气候变化的认识，并提供可行的解决方案。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>快速链接</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#problem">碳排放问题</a></li>
+                        <li><a href="#sources">排放源</a></li>
+                        <li><a href="#solutions">解决方案</a></li>
+                        <li><a href="#action">采取行动</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
+                    <h3>资源</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                        <li><a href="#">碳足迹计算器</a></li>
+                        <li><a href="#">减排指南</a></li>
+                        <li><a href="#">研究报告</a></li>
+                        <li><a href="#">政策建议</a></li>
+                        <li><a href="#">教育材料</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 北京市朝阳区环保大厦</p>
+                    <p><i class="fas fa-phone"></i> +86 10 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@carbon-emission.org</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2023 碳排放与气候变化. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -686,7 +929,7 @@
                 const inc = target / speed;
                 
                 if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
+                    counter.innerText = (count + inc).toFixed(1);
                     setTimeout(animateCounters, 1);
                 } else {
                     counter.innerText = target;
@@ -718,5 +961,4 @@
         });
     </script>
 </body>
-
 </html>
